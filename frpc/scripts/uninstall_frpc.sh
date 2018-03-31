@@ -15,6 +15,7 @@ rm -f /koolshare/scripts/config-frpc.sh
 rm -f /koolshare/scripts/frpc_status.sh
 rm -f /koolshare/webs/Module_frpc.asp
 rm -f /koolshare/configs/frpc.ini
+rm -fr /koolshare/perp/frpc
 rm -f /tmp/.frpc.ini
 rm -f /tmp/.frpc_stcp.ini
 rm -fr /tmp/frpc*

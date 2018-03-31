@@ -74,7 +74,7 @@ function openssHint(itemNum){
         _caption = "压缩";
     }
     else if(itemNum == 17){
-        statusmenu ="定时到Frp服务器上重新注册服务，以便Frp提供持续的服务。</br><font color='#F46'>注意：</font>填写内容为0时关闭该功能！";
+        statusmenu ="定时到Frp服务器上重新注册服务，以便Frp提供持续的服务。</br><font color='#F46'>注意：</font>填写内容为0时将启用进程监控（supervisor）模式！";
         _caption = "定时注册服务";
     }
     else if(itemNum == 18){

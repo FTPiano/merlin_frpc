@@ -14,14 +14,17 @@ cp -f /tmp/${MODULE}/scripts/* /koolshare/scripts/
 cp -f /tmp/${MODULE}/res/* /koolshare/res/
 cp -f /tmp/${MODULE}/webs/* /koolshare/webs/
 cp -f /tmp/${MODULE}/init.d/* /koolshare/init.d/
+cp -fr /tmp/${MODULE}/perp/* /koolshare/perp/
 [ ! -d /koolshare/res/layer ] && ( mkdir -p /koolshare/res/layer/; cp -rf /tmp/frpc/res/layer/* /koolshare/res/layer/ )
 rm -fr /tmp/frp* >/dev/null 2>&1
+PERP_BASE=/koolshare/perp /koolshare/bin/perpctl -q X ${MODULE}
 killall ${MODULE}
 chmod +x /koolshare/bin/frpc
 chmod +x /koolshare/scripts/config-frpc.sh
 chmod +x /koolshare/scripts/frpc_status.sh
 chmod +x /koolshare/scripts/uninstall_frpc.sh
 chmod +x /koolshare/init.d/S98frpc.sh
+chmod +x /koolshare/perp/${MODULE}/*
 sleep 1
 dbus set frpc_client_version=`/koolshare/bin/frpc --version`
 if [ "`dbus get frpc_version`"x = "2.1.4"x  ]; then

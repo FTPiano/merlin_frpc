@@ -1,6 +1,6 @@
 #! /bin/sh
 frpc_pid=`ps | grep -w frpc | grep -v grep | awk '{print $1}'`
-frpc_status=`ps | grep -w frpc | grep -cv grep`
+frpc_status=`ps | grep -w /koolshare/bin/frpc | grep -cv grep`
 frpc_version=`/koolshare/bin/frpc -v`
 if [ "$frpc_status" == "1" ];then
     echo 进程运行正常！版本：${frpc_version} （PID：${frpc_pid}）> /tmp/.frpc.log

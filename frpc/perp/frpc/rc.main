@@ -1,0 +1,15 @@
+#!/bin/sh
+
+exec 2>&1
+
+BIN=/koolshare/bin/frpc
+INI_FILE=/tmp/.frpc.ini
+
+export GOGC=40
+
+if test ${1} = 'start' ; then
+  killall -q $(basename "$BIN")
+  exec ${BIN} -c ${INI_FILE}
+fi
+
+exit 0

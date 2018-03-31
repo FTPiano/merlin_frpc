@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export PERP_BASE=/koolshare/perp
 eval `dbus export frpc_`
 source /koolshare/scripts/base.sh
 NAME=frpc
@@ -110,12 +111,21 @@ EOF
                 fi
             done
         fi
-        killall frpc || true
-        echo -n "starting ${NAME}..."
-        export GOGC=40
-        start-stop-daemon -S -q -b -m -p ${PID_FILE} -x ${BIN} -- -c ${INI_FILE}
-        echo " done"
+        (perpok frpc 2>/dev/null && perpctl X frpc) || true
+        if [ "${frpc_common_cron_time}" = "0" ]; then
+            perpctl A frpc
+            if [ "${frpc_common_login_fail_exit}" = "true" ]; then
+                (sleep 1 && perpctl o frpc) || true
+            fi
+        else
+            killall frpc || true
+            echo -n "starting ${NAME}..."
+            export GOGC=40
+            start-stop-daemon -S -q -b -m -p ${PID_FILE} -x ${BIN} -- -c ${INI_FILE}
+            echo " done"
+        fi
     else
+        perpctl -q X frpc || true
         killall frpc || true
     fi
 }
@@ -171,6 +181,13 @@ fun_ddns_start(){
 case $ACTION in
 start)
     fun_ntp_sync
+    fun_start_stop
+    fun_nat_start
+    fun_crontab
+    fun_ddns_start
+    ;;
+stop)
+    frpc_enable=0
     fun_start_stop
     fun_nat_start
     fun_crontab
