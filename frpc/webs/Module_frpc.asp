@@ -729,8 +729,8 @@ function toggle_func() {
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(22)">连接设置</a></th>
                                             <td>
                                                 <select id="frpc_common_login_fail_exit" name="frpc_common_login_fail_exit" style="width:165px;margin:0px 0px 0px 2px;" class="input_option" >
-                                                    <option value="true">失败后重复连接</option>
-                                                    <option value="false">失败后退出程序</option>
+                                                    <option value="false">失败后重复连接</option>
+                                                    <option value="true">失败后退出程序</option>
                                                 </select>
                                             </td>
                                         </tr>
