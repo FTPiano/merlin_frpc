@@ -15,8 +15,8 @@ function openssHint(itemNum){
         _caption = "服务器端口";
     }
     else if(itemNum == 3){
-        statusmenu ="此处填入你的frp服务器的特权授权码。对应服务器配置文件中的节[common]下的privilege_token字段。</br><font color='#F46'>注意：</font>使用带有特殊字符的密码，可能会导致frpc链接不上服务器。";
-        _caption = "Privilege Token";
+        statusmenu ="此处填入你的frp服务器的特权授权码。对应服务器配置文件中的节[common]下的token字段。</br><font color='#F46'>注意：</font>使用带有特殊字符的密码，可能会导致frpc链接不上服务器。";
+        _caption = "Token";
     }
     else if(itemNum == 4){
         statusmenu ="此处填入你的frp服务器HTTP穿透服务的端口，对应服务器配置文件中的节[common]下的vhost_http_port字段";
@@ -62,7 +62,7 @@ function openssHint(itemNum){
         statusmenu ="此处输入服务器端端口用来映射内部主机端口，如：80或8080</br><font color='#F46'>注意：</font>";
         statusmenu +="</br><b><font color='#669900'>http协议：</font></b>选择http协议时，远程主机端口对应服务器配置文件中的节[common]下的vhost_http_port字段值。";
         statusmenu +="</br><b><font color='#669900'>https协议：</font></b>选择https协议时，远程主机端口对应服务器配置文件中的节[common]下的vhost_https_port字段值。https协议只能对应穿透内网https协议。";
-        statusmenu +="</br><b><font color='#669900'>tcp协议：</font></b>选择tcp协议时，远程主机端口应在服务器配置文件中的节[common]下的privilege_allow_ports字段值范围内。";
+        statusmenu +="</br><b><font color='#669900'>tcp协议：</font></b>选择tcp协议时，远程主机端口应在服务器配置文件中的节[common]下的allow_ports字段值范围内。";
         _caption = "远程主机端口";
     }
     else if(itemNum == 15){

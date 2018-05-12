@@ -37,7 +37,7 @@ EOF
 [common]
 server_addr = ${frpc_common_server_addr}
 server_port = ${frpc_common_server_port}
-privilege_token = ${frpc_common_privilege_token}
+token = ${frpc_common_privilege_token}
 log_file = ${frpc_common_log_file}
 log_level = ${frpc_common_log_level}
 log_max_days = ${frpc_common_log_max_days}
@@ -52,7 +52,7 @@ EOF
 [common]
 server_addr = ${frpc_common_server_addr}
 server_port = ${frpc_common_server_port}
-privilege_token = ${frpc_common_privilege_token}
+token = ${frpc_common_privilege_token}
 EOF
             fi
             server_nu=`dbus list frpc_localhost_node | sort -n -t "_" -k 4|cut -d "=" -f 1|cut -d "_" -f 4`
