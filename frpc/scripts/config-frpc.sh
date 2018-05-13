@@ -17,8 +17,8 @@ fun_ntp_sync(){
     ntp_server=`nvram get ntp_server0`
     start_time="`date +%Y%m%d`"
     ntpclient -h ${ntp_server} -i3 -l -s > /dev/null 2>&1
-    if [ "${start_time}"x = "`date +%Y%m%d`"x ]; then  
-        ntpclient -h ntp1.aliyun.com -i3 -l -s > /dev/null 2>&1 
+    if [ "${start_time}"x = "`date +%Y%m%d`"x ]; then
+        ntpclient -h ntp1.aliyun.com -i3 -l -s > /dev/null 2>&1
     fi
 }
 fun_start_stop(){
