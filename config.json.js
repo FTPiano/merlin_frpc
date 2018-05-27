@@ -1,8 +1,8 @@
 {
     "description": "内网穿透利器，谁用谁知道。", 
     "home_url": "Module_frpc.asp", 
-    "md5": "88584847e6cfb6761cd5df5aa973a993", 
+    "md5": "7ec76bf9112b6d1d45f97d42066b6b2b", 
     "module": "frpc", 
     "title": "frpc穿透", 
-    "version": "2.1.12"
+    "version": "2.1.14"
 }
